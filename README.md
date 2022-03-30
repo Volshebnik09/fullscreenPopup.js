@@ -1,6 +1,6 @@
 # fullscreenPopup.js
 
-##Примерная структура попапа
+## Примерная структура попапа
 ``` javaScript
 let popup1 = new Popup('.akselerator__popup1','.ref-popup-1','.popup1-closeBtn')
 let popup2 = new Popup('.akselerator__popup2','.ref-popup-2','.popup2-closeBtn')
