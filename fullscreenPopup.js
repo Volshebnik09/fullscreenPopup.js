@@ -31,18 +31,23 @@ export default class Popup{
         popupClone.classList.toggle('popup__clone__close')
         this.closeBtn = document.querySelector(lCloseBtn)
 
-        this.openBtn.addEventListener('click', (e)=>{
+        function togglePopup(){
             popupClone.classList.toggle('popup__clone__open')
             popupClone.classList.toggle('popup__clone__close')
+            document.querySelector('body').style.overflowY == 'hidden'
+            ? document.querySelector('body').style.overflowY = 'auto'
+            : document.querySelector('body').style.overflowY = 'hidden'
+        }
+
+        this.openBtn.addEventListener('click', (e)=>{
+            togglePopup()
         })
         this.closeBtn.addEventListener('click', (e) => {
-            popupClone.classList.toggle('popup__clone__open')
-            popupClone.classList.toggle('popup__clone__close')
+            togglePopup()
         })
         popupClone.addEventListener('click',(e) => {
             if (e.target.classList.value.indexOf('popup__clone__open') >= 0) {
-                popupClone.classList.toggle('popup__clone__open')
-                popupClone.classList.toggle('popup__clone__close')
+                togglePopup()
             }
         });
     }
